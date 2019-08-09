@@ -5,20 +5,20 @@
       <p class="accout">账号:{{ account }}</p>
     </div>
     <div class="product-subtitle">产品</div>
-    <ProductList />
+    <ProductList></ProductList>
     <ShoppingCart></ShoppingCart>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import ProductList from '../components/ProductList'
 import ShoppingCart from '../components/ShoppingCart'
 export default {
-  data () {
-    return {
-      account: 'protagonist'
-    }
-  },
+  name: 'index',
+  computed: mapState({
+    account: state => state.userInfo.account
+  }),
   components: { ProductList, ShoppingCart }
 }
 </script>
@@ -42,10 +42,10 @@ export default {
   right: 0px;
 }
 .product-subtitle {
-    margin-top: 20px;
-    height: 50px;
-    background: #ccc;
-    font-size: 25px;
-    text-align: center;
+  margin-top: 20px;
+  height: 50px;
+  background: #ccc;
+  font-size: 25px;
+  text-align: center;
 }
 </style>
