@@ -16,9 +16,12 @@
 <script>
 import { mapState, mapGetters } from 'vuex'
 export default {
+  /**
+   * TODO: no code hints let me spell state name error 
+   */
   computed: {
     ...mapState({
-      checkoutStatus: state => state.cart.checkoutState
+      checkoutStatus: state => state.cart.checkoutStatus
     }),
     ...mapGetters('cart', {
       products: 'cartProducts',

@@ -10,6 +10,7 @@ export default {
     setTimeout(() => cb(_products), 100)
   },
   buyProducts (products, cb, errorCb) {
+    console.log('unit-test two part', cb)
     setTimeout(() => {
       Math.random() > 0.5 ? cb() : errorCb()
     }, 100)
