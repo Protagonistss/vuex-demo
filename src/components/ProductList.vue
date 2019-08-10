@@ -2,7 +2,7 @@
   <ul>
     <li v-for="product in products" :key="product.id">
       <span>{{ product.title }}-{{ product.price }}</span>
-      <button @click="addProductToCart(product)">加入购物车</button>
+      <button :disabled="!product.inventory" @click="addProductToCart(product)">加入购物车</button>
     </li>
   </ul>
 </template>
@@ -15,6 +15,13 @@ export default {
     products: state => state.products.all
   }),
   methods: mapActions('cart', ['addProductToCart']),
+  /**
+   * methos: {
+   *  addProductToCart(product) {
+   *      this.$store.dispatch(`cart/addProductToCart`, product)
+   *    }
+   *  }
+   */
   created () {
     this.$store.dispatch('products/getAllProducts')
   }

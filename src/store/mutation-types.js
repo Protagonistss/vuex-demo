@@ -1,8 +1,10 @@
 export const CART = {
   SET_CHECKOUT_STATUS: 'setCheckoutStatus',
   PUSH_PRODUCT_TO_CART: 'pushProductToCart',
-  INCREMENT_ITEM_QUANTITY: 'incrementItemQuantity'
+  INCREMENT_ITEM_QUANTITY: 'incrementItemQuantity',
+  SET_CART_ITEMS: 'setCartItems'
 }
 export const PRODUCTS = {
-  SET_PRODUCTS: 'setProducts'
+  SET_PRODUCTS: 'setProducts',
+  DECREMENT_PRODUCT_INVENTORY: 'decrementProductInventory'
 }
